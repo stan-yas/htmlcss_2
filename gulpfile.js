@@ -21,10 +21,10 @@ function watch_less(){
 }
 
 function serve(){
+  style();
   server.init({
     server: "./barbershop/"
   });
-  // watch_less();
   gulp.watch(["./barbershop/*.html", "./barbershop/css/*.css"]).on('change',server.reload);    /*, {delay: 1000}, server.reload);*/
 }
 
