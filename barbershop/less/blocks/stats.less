@@ -1,0 +1,38 @@
+@import "../variables";
+@import "../mixins";
+
+.stats {
+  width: 320px;
+  margin: 0 auto;
+
+  &__header {
+    padding: 30px 40px 25px 40px;
+  }
+
+  &__list {
+    width: 100%;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .stats {
+    width: 640px;
+    margin-top: -185px;
+
+    &__list {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: @desktop-width){
+  .stats {
+    width: 960px;
+    margin-top: -160px;
+    display: flex;
+
+    &__header {
+      width: 240px;
+    }
+  }
+}
