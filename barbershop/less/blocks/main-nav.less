@@ -2,17 +2,39 @@
 @import "../mixins";
 
 .main-nav {
-  width: 320px;
-  margin: 0 auto;
-  //background-color: @main-nav-bg-color;
-  color: @main-nav-color;
+    position: relative;
+    width: 320px;
+    //min-height: 51px;
+    margin: 0 auto;
+    background-color: @main-nav-bg-color;
+    color: @main-nav-color;
 
   &__toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
     width: 70px;
     height: 50px;
     border: none;
-    background: #6A4D38 url("../img/menu-icon.png") center/36px 19px no-repeat;
-    order: 3;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #6A4D38;
+
+    &:hover, &:active {
+      background-color: #624530;
+    }
+  }
+
+  &--closed &__toggle {
+    background-image: url("/img/menu-icon.png");
+  }
+
+  &--opened &__toggle{
+    right: auto;
+    left: 0;
+    background-image: url("/img/cross-icon.png");
   }
 
   &__list {
