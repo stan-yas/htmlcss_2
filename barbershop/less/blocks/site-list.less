@@ -1,2 +1,45 @@
 @import "../variables";
 @import "../mixins";
+
+.site-list {
+  font-weight: bold;
+  background-color: @main-nav-bg-color;
+
+  a {
+    display: block;
+    padding: 12px 21px;
+
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    border-top: 1px solid #886e5b;
+    border-bottom: 1px solid #71543f;
+
+    &[href] {
+      &:hover {
+        background-color: #755a46;
+        border-top-color: #755a46;
+      }
+      &:active {
+        color: rgba(255, 255, 255, 0.3);
+        background-color: #6A4D38;
+        border-top-color: #6A4D38;
+      }
+    }
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .site-list {
+    display: flex;
+    justify-content: space-between;
+    width: 570px
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .site-list {
+    width: 780px;
+  }
+}

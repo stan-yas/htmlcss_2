@@ -1,0 +1,35 @@
+@import "../variables";
+@import "../mixins";
+
+.user-list {
+  background-color: #6A4D38;
+  &__login {
+    position: relative;
+    display: block;
+    padding: 17px 21px 17px 49px;
+    line-height: 18px;
+  }
+
+  &__login-icon {
+    position: absolute;
+    top: 17px;
+    left: 21px;
+    opacity: 0.3;
+
+    polygon {
+      fill: white;
+    }
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .user-list {
+    width: 60px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .user-list {
+    width: 160px;
+  }
+}
