@@ -8,24 +8,24 @@ const less = require("gulp-less");
 const server = require("browser-sync").create();
 
 function style(){
-  return gulp.src("./barbershop/less/style.less")
+  return gulp.src("./less/style.less")
     // .pipe(plumber())
     .pipe(less())
     // .pipe(postcss([autoprefixer()]))
-    .pipe(gulp.dest("./barbershop/css")); /*.pipe(server.stream()*/
+    .pipe(gulp.dest("./css")); /*.pipe(server.stream()*/
 }
 
 function watch_less(){
-  return gulp.watch(["./barbershop/less/*.less","./barbershop/less/blocks/*.less"],
+  return gulp.watch(["./less/*.less","./less/blocks/*.less"],
     {delay: 1000}, style);
 }
 
 function serve(){
   style();
   server.init({
-    server: "./barbershop/"
+    server: "./"
   });
-  gulp.watch(["./barbershop/*.html", "./barbershop/css/*.css"]).on('change',server.reload);    /*, {delay: 1000}, server.reload);*/
+  gulp.watch(["./*.html", "./css/*.css"]).on('change',server.reload);    /*, {delay: 1000}, server.reload);*/
 }
 
 exports.style = style;

@@ -73,6 +73,28 @@
     z-index: 10;
     min-height: 80vh;
   }
+
+  .main-nav--nojs {
+    .main-nav__toggle {
+      display: none;
+    }
+    .main-nav__wrapper {
+      position: static;
+      min-height: 0;
+    }
+    .site-list__item {
+      display: block;
+    }
+    .site-list__item--active a {
+      padding-right: 21px;
+      padding-left: 21px;
+      text-align: left;
+    }
+    .user-list__item {
+      display: block;
+      background-color: #6A4D38;
+    }
+  }
 }
 
 @media (min-width: @tablet-width) {
