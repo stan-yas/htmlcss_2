@@ -2,36 +2,42 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Барбершоп-"Бородинский"</title>
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+<!--  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap&subset=cyrillic" rel="stylesheet">-->
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
   <header class="page-header">
     <a class="page-header__logo">
-      <img class="page-header__logo-image" src="img/logo_m.svg"
+      <img class="page-header__logo-image" src="img/logo-m.png"
             width="226" height="30" alt="Барбершоп Бородинский">
     </a>
-    <nav class="main-nav">
-      <button class="main-nav__toggle" type="button"><!--Открыть меню--></button>
-      <ul class="main-nav__list site-list">
-        <li class="site-list__item site-list__item--active">
-          <a>Главная</a>
-        <li class="site-list__item">
-          <a href="photo.html">Наши работы</a>
-        <li class="site-list__item">
-          <a href="form.html">Записаться</a>
-        <li class="site-list__item">
-          <a href="#">Контакты</a>
-        <li class="site-list__item">
-          <a href="#">HTML Academy</a>
-        </li>
-      </ul>
-      <ul class="main-nav__list user-list">
-        <li class="user-list__item">
-          <a class="user-list__login" href="login.html">Войти</a>
-        </li>
-      </ul>
+    <nav class="main-nav main-nav--closed main-nav--nojs">
+      <button class="main-nav__toggle" type="button">
+        <span class="visually-hidden">Открыть меню</span></button>
+      <div  class="main-nav__wrapper">
+        <ul class="main-nav__list site-list">
+          <li class="site-list__item ">
+            <a>Главная</a>
+          <li class="site-list__item site-list__item--active">
+            <a href="photo.html">Наши работы</a>
+          <li class="site-list__item">
+            <a href="form.html">Записаться</a>
+          <li class="site-list__item">
+            <a href="#">Контакты</a>
+          <li class="site-list__item">
+            <a href="#">HTML Academy</a>
+          </li>
+        </ul>
+        <ul class="main-nav__list user-list">
+          <li class="user-list__item">
+            <a class="user-list__login" href="login.html">
+              <svg class="user-list__login-icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/><polygon points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/></svg>
+              Войти</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -42,7 +48,7 @@
         <h2 class="visually-hidden">Статистика Барбершопа</h2>
         <b class="stats__slogan">Стрижка у нас это выгодно!</b>
         <p class="stats__intro">Мужская стрижка требует точного подхода.
-          обратимся к статистике:</p>
+          Обратимся к статистике:</p>
         <small class="stats__legend stats__legend--top">
           <sup>*</sup> - приведённые данные ложь
         </small>
@@ -53,7 +59,7 @@
             1 500<sup>*</sup>
           </td>
           <td class="stats__field">
-            рублей вложений
+            рублей <br>вложений
           </td>
         </tr>
         <tr>
@@ -241,5 +247,6 @@
       </div>
     </div>
   </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>

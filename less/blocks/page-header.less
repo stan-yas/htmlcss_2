@@ -1,0 +1,44 @@
+.page-header {
+  display: flex;
+  flex-direction: column;
+
+    &__logo {
+      margin: 26px auto;
+      text-align: center;
+    }
+}
+
+@media (min-width: @tablet-width) {
+  .page-header {
+    background-color: black;
+    &__logo {
+      order: 2;
+      width: 100%;
+      height: 400px;
+      background-color: black;
+      background-image: url("/img/bg-header.jpg");
+      background-repeat: no-repeat;
+      background-position: center -9px;
+    }
+    &__logo-image {
+      display: block;
+      width: 370px;
+      height: auto;
+      margin: 0 auto;
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-header {
+    &__logo {
+      height: 648px;
+      background-position: center 0;
+      background-size: cover;
+    }
+    &__logo-image {
+      margin-top: 57px;
+    }
+  }
+}
