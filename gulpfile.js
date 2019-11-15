@@ -4,11 +4,22 @@ const gulp = require("gulp");
 const less = require("gulp-less");
 const gulp_imagemin = require("gulp-imagemin");
 const imagemin = require("imagemin");
-const webp = require("imagemin-webp");
+const imagemin_webp = require("imagemin-webp");
 // const plumber = require("gulp-plumber");
-// const postcss = require("gulp-postcss");
-// const autoprefixer = require("autoprefixer");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
 const server = require("browser-sync").create();
+
+const paths = {
+    styles: {
+      src: 'src/styles/**/*.less',
+      dest: 'assets/styles/'
+    },
+    scripts: {
+      src: 'src/scripts/**/*.js',
+      dest: 'assets/scripts/'
+    }
+  };
 
 function min_images() {
   return gulp.src("./img/*")
@@ -21,7 +32,7 @@ function min_webp() {
     const files = await imagemin(["./img/*.jpg"], {
       destination: "./img",
       plugins: [
-        webp({
+        imagemin_webp({
           quality: 65 // Quality setting from 0 to 100
           /*lossless: true // Losslessly encode images*/
         })
@@ -59,3 +70,4 @@ exports.watch = watch_less;
 exports.watch_serve = gulp.parallel(watch_less, serve);
 exports.imagemin = min_images;
 exports.webp = min_webp;
+exports.build = gulp.series(style);
